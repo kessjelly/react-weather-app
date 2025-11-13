@@ -1,0 +1,147 @@
+body {
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/396/original/pexels-pixabay-531767.jpg?1749106171");
+    background-size: cover;
+    background-position: center top;
+    font-family: "Montserrat", sans-serif;
+}
+
+.Weather header {
+  border-bottom: 1px solid #4491c9;
+  padding: 0 0 20px 0;
+}
+
+.Weather a {
+  color: #4491c9;
+}
+
+.Weather {
+  background-color: white;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 45px auto;
+  padding: 30px;
+  box-shadow: 0 30px 50px #41326414;
+  border-radius: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: auto;
+}
+
+.Weather .search-form-input {
+  background-color: #4491c9;
+  opacity: 50%;
+  color: #cfd4de;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  display: inline-block;
+  padding: 15px 20px;
+  width: 70%;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.Weather .search-form-input::placeholder {
+  color: #cfd4de;
+}
+
+.Weather .search-form-button {
+  background-color: #4491c9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.Weather main {
+  padding: 30px 0;
+}
+
+.Weather .app-data {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.Weather .app-city {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.Weather .app-details {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.app-details strong {
+  color: #f65282;
+  font-weight: bold;
+}
+
+.Weather .app-temperature-container {
+  display: flex;
+}
+
+.Weather .app-temperature {
+  font-size: 80px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.Weather .app-emoji {
+  width: 88px;
+  height: 88px;
+}
+
+.Weather .app-temp-unit {
+  margin-top: 16px;
+  font-size: 28px;
+}
+
+.Weather .weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 600px;
+}
+
+.Weather .forecast-date {
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.Weather .forecast-icon {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.Weather .forecast-temps {
+  text-align: center;
+  color: #f65282;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.Weather .forecast-temp {
+  padding: 0 10px;
+}
+
+.Weather footer {
+  border-top: 0.5px solid #4491c9;
+  padding: 20px 0 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+}

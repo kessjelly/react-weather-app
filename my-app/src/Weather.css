@@ -5,16 +5,28 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.Weather {
+  background-color: white;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 45px auto;
+  padding: 30px;
+  box-shadow: 0 30px 50px #41326414;
+  border-radius: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .Weather header {
   border-bottom: 1px solid #4491c9;
   padding: 0 0 20px 0;
 }
 
-.Weather a {
+.Weatherinfo a {
   color: #4491c9;
 }
 
-.Weather {
+.Weatherinfo {
   background-color: white;
   opacity: 0.9;
   max-width: 600px;
@@ -55,17 +67,17 @@ body {
   font-size: 16px;
 }
 
-.Weather main {
+.Weatherinfo main {
   padding: 30px 0;
 }
 
-.Weather .app-data {
+.Weatherinfo .app-data {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
 }
 
-.Weather .app-city {
+.Weatherinfo .app-city {
   margin: 0;
   font-size: 38px;
   font-weight: 700;

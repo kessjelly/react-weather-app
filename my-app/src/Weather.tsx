@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import FormattedDate from "./FormattedDate";
+import Weatherinfo from "./Weatherinfo";
 
 import "./Weather.css";
 
@@ -35,8 +35,8 @@ export default function Weather() {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
-        <div className="Weather-container">
+      <>
+        <div className="Weather">
           <header>
             <form className="search-form" id="search-form">
               <input
@@ -53,59 +53,9 @@ export default function Weather() {
               />
             </form>
           </header>
-          <main>
-            <div className="app-data">
-              <div>
-                <h1 className="app-city-name" id="app-city-name">
-                  {weatherData.city}
-                </h1>
-                <p className="app-details">
-                  <span id="day">
-                    <FormattedDate date={weatherData.date} />
-                  </span>
-                  , <span id="description">{weatherData.description}</span>
-                  <br />
-                  Humidity:
-                  <strong id="humidity"> {weatherData.humidity}%</strong>, Wind:
-                  <strong id="speed"> {weatherData.wind} m/s</strong>
-                  <br />
-                  <span id="feel-like mt-3">
-                    Feels like:{" "}
-                    <strong id="feel-like-temp">
-                      {Math.round(weatherData.feelsLike!)}°C
-                    </strong>
-                  </span>
-                </p>
-              </div>
-              <div className="app-temperature-container">
-                <div className="app-emoji" id="icon">
-                  <img src={weatherData.icon} alt={weatherData.description} />
-                </div>
-                <div className="app-temperature" id="temperature">
-                  {Math.round(weatherData.temperature!)}
-                </div>
-                <div className="app-temp-unit">°C</div>
-              </div>
-            </div>
-            <div className="weather-forecast" id="forecast"></div>
-          </main>
-          <footer>
-            This website was coded by
-            <a href="https://github.com/kessjelly" target="_blank">
-              {" "}
-              Jessica Kelly
-            </a>
-            , is open-sourced on
-            <a href="https://github.com/kessjelly/meteorologie" target="_blank">
-              Github
-            </a>
-            and hosted on
-            <a href="https://meteorologie-app.netlify.app/" target="_blank">
-              Netlify
-            </a>
-          </footer>
+          <Weatherinfo data={weatherData} />
         </div>
-      </div>
+      </>
     );
   } else {
     const apiKey = "2d96d64425dca1d6eda00d942a281c0d";

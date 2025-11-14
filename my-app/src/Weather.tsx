@@ -17,6 +17,7 @@ type WeatherData = {
 };
 
 export default function Weather() {
+  const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<WeatherData>({ ready: false });
 
   function handleResponse(response: any) {
@@ -33,36 +34,39 @@ export default function Weather() {
     });
   }
 
-  if (weatherData.ready) {
-    return (
-      <>
-        <div className="Weather">
-          <header>
-            <form className="search-form" id="search-form">
-              <input
-                type="search"
-                placeholder="Enter your city..."
-                required
-                id="search-form-input"
-                className="search-form-input"
-              />
-              <input
-                type="submit"
-                value="Search"
-                className="search-form-button"
-              />
-            </form>
-          </header>
-          <Weatherinfo data={weatherData} />
-        </div>
-      </>
-    );
-  } else {
+  function handleCityChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setCity(event.target.value);
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!city) return; // don't fetch if input is empty
     const apiKey = "2d96d64425dca1d6eda00d942a281c0d";
-    let city = "Brisbane";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
-
-    return "Loading...";
   }
+
+  return (
+    <div className="Weather">
+      <header>
+        <form className="search-form" onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Enter your city..."
+            required
+            className="search-form-input"
+            value={city}
+            onChange={handleCityChange}
+          />
+          <input type="submit" value="Search" className="search-form-button" />
+        </form>
+      </header>
+
+      {weatherData.ready ? (
+        <Weatherinfo data={weatherData} />
+      ) : (
+        <p>Enter a city to see the weather.</p>
+      )}
+    </div>
+  );
 }

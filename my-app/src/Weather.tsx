@@ -69,7 +69,7 @@ export default function Weather() {
                   <span id="feel-like mt-3">
                     Feels like:{" "}
                     <strong id="feel-like-temp">
-                      {Math.round(weatherData.feelsLike)}°C
+                      {Math.round(weatherData.feelsLike!)}°C
                     </strong>
                   </span>
                 </p>
@@ -79,7 +79,7 @@ export default function Weather() {
                   <img src={weatherData.icon} alt={weatherData.description} />
                 </div>
                 <div className="app-temperature" id="temperature">
-                  {Math.round(weatherData.temperature)}
+                  {Math.round(weatherData.temperature!)}
                 </div>
                 <div className="app-temp-unit">°C</div>
               </div>

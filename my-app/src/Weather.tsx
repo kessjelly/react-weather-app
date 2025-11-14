@@ -1,5 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./Weather.css";
 
 export default function Weather() {

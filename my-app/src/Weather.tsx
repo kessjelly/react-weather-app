@@ -63,8 +63,8 @@ export default function Weather() {
                   <span id="description">{weatherData.description}</span>
                   <br />
                   Humidity:
-                  <strong id="humidity"> {weatherData.humidity}</strong>, Wind:
-                  <strong id="speed"> {weatherData.wind}</strong>
+                  <strong id="humidity"> {weatherData.humidity}%</strong>, Wind:
+                  <strong id="speed"> {weatherData.wind} m/s</strong>
                   <br />
                   <span id="feel-like mt-3">
                     Feels like:{" "}

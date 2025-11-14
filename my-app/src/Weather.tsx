@@ -13,7 +13,7 @@ type WeatherData = {
   icon?: string;
   feelsLike?: number;
   city?: string;
-  date?: string;
+  date?: Date;
 };
 
 export default function Weather() {
@@ -29,7 +29,7 @@ export default function Weather() {
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       feelsLike: response.data.main.feels_like,
       city: response.data.name,
-      date: new Date(response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000).toLocaleString(),
     });
   }
 

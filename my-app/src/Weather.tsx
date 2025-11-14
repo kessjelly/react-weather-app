@@ -3,11 +3,22 @@ import { useState } from "react";
 
 import "./Weather.css";
 
+type WeatherData = {
+  ready: boolean;
+  temperature?: number;
+  wind?: number;
+  humidity?: number;
+  description?: string;
+  icon?: string;
+  feelsLike?: number;
+  city?: string;
+  date?: string;
+};
+
 export default function Weather() {
-  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [weatherData, setWeatherData] = useState<WeatherData>({ ready: false });
 
   function handleResponse(response: any) {
-    console.log(response.data.main.temp);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,

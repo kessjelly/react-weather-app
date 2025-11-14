@@ -25,23 +25,26 @@ export default function Weather() {
         <main>
           <div className="app-data">
             <div>
-              <h1 className="app-city-name" id="app-city-name"></h1>
+              <h1 className="app-city-name" id="app-city-name">
+                Gold Coast
+              </h1>
               <p className="app-details">
-                <span id="time"></span>,<span id="description"></span>
+                <span id="time">10:00</span>,{" "}
+                <span id="description">Sunny</span>
                 <br />
-                Humidity:
-                <strong id="humidity"></strong>, Wind:
-                <strong id="speed"></strong>
+                Humidity: 
+                <strong id="humidity">25%</strong>, Wind:
+                <strong id="speed">10%</strong>
                 <br />
                 <span id="feel-like">
-                  Feels like: <strong id="feel-like-temp"></strong>
+                  Feels like: <strong id="feel-like-temp">20°C</strong>
                 </span>
               </p>
             </div>
             <div className="app-temperature-container">
               <div className="app-emoji" id="icon"></div>
               <div className="app-temperature" id="temperature"></div>
-              <div className="app-temp-unit">°C</div>
+              <div className="app-temp-unit">20°C</div>
             </div>
           </div>
           <div className="weather-forecast" id="forecast"></div>

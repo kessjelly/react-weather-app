@@ -29,7 +29,7 @@ export default function Weather() {
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       feelsLike: response.data.main.feels_like,
       city: response.data.name,
-      date: new Date(response.data.dt * 1000).toLocaleString(),
+      date: new Date(response.data.dt * 1000),
     });
   }
 

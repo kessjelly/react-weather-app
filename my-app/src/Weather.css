@@ -1,8 +1,8 @@
 body {
-    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/396/original/pexels-pixabay-531767.jpg?1749106171");
-    background-size: cover;
-    background-position: center top;
-    font-family: "Montserrat", sans-serif;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/396/original/pexels-pixabay-531767.jpg?1749106171");
+  background-size: cover;
+  background-position: center top;
+  font-family: "Montserrat", sans-serif;
 }
 
 .Weather header {
@@ -144,4 +144,10 @@ body {
   text-align: center;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 667px) {
+  .Weather .app-temperature {
+    font-size: 60px;
+  }
 }

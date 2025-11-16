@@ -1,4 +1,5 @@
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import "./Weather.css";
 
 type WeatherInfoProps = {
@@ -30,7 +31,9 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
               <span id="description">{data.description}</span>
               <br />
               Humidity:
-              <strong id="humidity"> {data.humidity}%</strong>, Wind:
+              <strong id="humidity"> {data.humidity}%</strong>
+              <br />
+              Wind:
               <strong id="speed"> {data.wind} m/s</strong>
               <br />
               <span id="feel-like mt-3">
@@ -45,10 +48,10 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
             <div className="app-emoji" id="icon">
               <img src={data.icon} alt={data.description} />
             </div>
-            <div className="app-temperature" id="temperature">
-              {Math.round(data.temperature!)}
+
+            <div>
+              <WeatherTemperature data={data} />
             </div>
-            <div className="app-temp-unit">°C</div>
           </div>
         </div>
         <div className="weather-forecast" id="forecast"></div>

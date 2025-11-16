@@ -65,7 +65,7 @@ export default function Weather() {
       {weatherData.ready ? (
         <Weatherinfo data={weatherData} />
       ) : (
-        <p>Enter a city to see the weather.</p>
+        <p>Enter a city to see the weather...</p>
       )}
     </div>
   );

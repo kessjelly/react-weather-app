@@ -1,7 +1,11 @@
 body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/167/396/original/pexels-pixabay-531767.jpg?1749106171");
   background-size: cover;
-  background-position: center top;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -88,22 +92,30 @@ body {
 
 .Weather .app-temperature-container {
   display: flex;
+  align-items: center;
 }
 
 .Weather .app-temperature {
   font-size: 80px;
   font-weight: bold;
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
-.Weather .app-emoji {
-  width: 88px;
-  height: 88px;
+.Weather .app-emoji img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.Weather .app-temp-unit {
-  margin-top: 16px;
+.Weather .app-temperature .app-temp-unit {
   font-size: 28px;
+  margin-left: 4px;
+  margin-top: 16px;
+  line-height: 1;
+  align-self: baseline;
 }
 
 .Weather .weather-forecast {
@@ -150,7 +162,43 @@ body {
 }
 
 @media (max-width: 667px) {
+  .Weather {
+    width: 350px;
+  }
+
+  .search-form-button {
+    font-size: 12px;
+    margin-top: 15px;
+    margin-left: 0;
+    display: block;
+  }
+
+  .Weather .app-temperature-container {
+    gap: 8px;
+  }
+
+  .Weather .app-emoji {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
   .Weather .app-temperature {
-    font-size: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .Weather .app-temp-unit {
+    font-size: 22px;
+    margin-left: 4px;
+    align-self: baseline;
+  }
+
+  .Weather .app-details {
+    font-size: 13px;
+    line-height: 1;
   }
 }

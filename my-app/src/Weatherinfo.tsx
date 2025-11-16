@@ -34,7 +34,7 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
               <strong id="humidity"> {data.humidity}%</strong>
               <br />
               Wind:
-              <strong id="speed"> {data.wind} m/s</strong>
+              <strong id="speed"> {data.wind} km/h</strong>
               <br />
               <span id="feel-like mt-3">
                 Feels like:{" "}

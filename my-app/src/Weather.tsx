@@ -40,7 +40,7 @@ export default function Weather() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!city) return; // don't fetch if input is empty
+    if (!city) return; 
     const apiKey = "2d96d64425dca1d6eda00d942a281c0d";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);

@@ -1,5 +1,6 @@
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 type WeatherInfoProps = {
@@ -54,7 +55,7 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
             </div>
           </div>
         </div>
-        <div className="weather-forecast" id="forecast"></div>
+       <WeatherForecast />
       </main>
       <footer>
         This website was coded by

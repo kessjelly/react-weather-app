@@ -5,7 +5,7 @@
 
 .WeatherForecast-temperature-min {
   margin-left: 8px;
-  opacity: 0.50;
+  opacity: 0.5;
 }
 
 .WeatherForecast-icon img {
@@ -17,4 +17,20 @@
   display: flex;
   justify-content: center;
   gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .WeatherForecast-col {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 15px;
+  }
+  .WeatherForecast-col:nth-child(n+4) {
+    flex: 0 0 calc(50% - 20px); 
+    width: 50%;
+  }
 }

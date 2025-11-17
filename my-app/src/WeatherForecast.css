@@ -1,0 +1,14 @@
+.WeatherForecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.WeatherForecast-temperature-min {
+  margin-left: 8px;
+  opacity: 0.50;
+}
+
+.WeatherForecast-icon img {
+  width: 32px;
+  height: 32px;
+}

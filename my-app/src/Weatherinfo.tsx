@@ -55,7 +55,7 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
             </div>
           </div>
         </div>
-       <WeatherForecast />
+        <WeatherForecast data={data}/>
       </main>
       <footer>
         This website was coded by

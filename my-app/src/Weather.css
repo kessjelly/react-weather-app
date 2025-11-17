@@ -9,6 +9,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.Weather .FirstScreen {
+  font-size: large;
+  color: #f65282;
+}
+
 .Weather {
   background-color: white;
   opacity: 0.9;

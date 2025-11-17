@@ -1,44 +1,41 @@
+import { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 type WeatherForecastProps = {
-  data: {
-    city?: string;
-    temperature?: number;
-    wind?: number;
-    humidity?: number;
-    description?: string;
-    icon?: string;
-    feelsLike?: number;
-    date?: Date;
-  };
+  data: { city?: string };
 };
 
 export default function WeatherForecast({ data }: WeatherForecastProps) {
-    function handleForecastResponse(response: any) {
-      console.log(response.data);
-    }
+  const [forecast, setForecast] = useState<any[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    if (!data.city) return;
 
     const apiKey = "3b0e0f1639296410oabf7a45tcd4001b";
-    let city = data.city;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    const apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${data.city}&key=${apiKey}`;
 
-    axios.get(apiUrl).then(handleForecastResponse);
+    axios.get(apiUrl).then((response) => {
+      setForecast(response.data.daily);
+      setLoaded(true);
+    });
+  }, [data.city]);
 
+  if (!loaded) {
+    return <p>Loading forecast...</p>;
+  }
+
+   const nextFiveDays = forecast.slice(1, 6);
   return (
     <div className="WeatherForecast" id="forecast">
       <div className="row">
-        <div className="col">
-          <div className="WeatherForecast-Day"> Thurs </div>
-          <div className="WeatherForecast-icon">
-            <img src={data.icon} alt={data.description} />
-          </div>
-          <div className="WeatherForecast-temperatures">
-            <span className="WeatherForecast-temperature-max">19°</span>
-            <span className="WeatherForecast-temperature-min">10°</span>
-          </div>
+     {nextFiveDays.map((day, index) => (
+      <div className="col" key={index}>
+        <WeatherForecastDay data={day} index={index} />
         </div>
+        ))}
       </div>
     </div>
   );

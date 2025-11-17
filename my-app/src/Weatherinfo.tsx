@@ -29,7 +29,10 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
               <FormattedDate date={data.date} />
             </span>
             <p className="app-details">
-              <span id="description">{data.description}</span>
+              <span id="description">
+                {data.description &&
+                  data.description[0].toUpperCase() + data.description.slice(1)}
+              </span>
               <br />
               Humidity:
               <strong id="humidity"> {data.humidity}%</strong>
@@ -55,19 +58,20 @@ export default function Weatherinfo({ data }: WeatherInfoProps) {
             </div>
           </div>
         </div>
-        <WeatherForecast data={data}/>
+        <WeatherForecast data={data} />
       </main>
       <footer>
         This website was coded by
-        <a href="https://github.com/kessjelly" target="_blank">
           {" "}
+        <a href="https://github.com/kessjelly" target="_blank">
           Jessica Kelly
         </a>
-        , is open-sourced on
+        , is open-sourced on{" "}
         <a href="https://github.com/kessjelly/meteorologie" target="_blank">
           Github
-        </a>
+        </a>{" "}
         and hosted on
+          {" "}
         <a href="https://meteorologie-app.netlify.app/" target="_blank">
           Netlify
         </a>
